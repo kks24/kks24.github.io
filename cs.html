@@ -11,8 +11,7 @@
 function loadtimer() {
     var parameters = location.search.substring(1).split("&");
     var sku = parameters[0].split("=");
-    console.log(sku)
-    document.getElementById("BaseSKU").value = sku;
+    document.getElementById("BaseSKU").value = sku[1];
 
     document.getElementById("atc_form").submit();
 
