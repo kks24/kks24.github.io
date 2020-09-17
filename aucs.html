@@ -1,0 +1,19 @@
+<body onload="loadtimer()">
+    <h2>Getting Stock</h2>
+    <h3>Developed By LOMO#1234</h3>
+    <form action="https://www.footlocker.com.au/INTERSHOP/web/WFS/FootlockerAustraliaPacific-Footlocker_AU-Site/en_AU/-/AUD/ViewProduct-ProductVariationSelect" method="GET" id="atc_form">
+        <input type="hidden" id="BaseSKU" name="BaseSKU">
+        <input type="hidden" id="InventoryServerity" name="InventoryServerity" value="ProductDetail">
+    </form>
+</body>
+
+<script type="text/javascript">
+function loadtimer() {
+    var parameters = location.search.substring(1).split("&");
+    var sku = parameters[0].split("=");
+    document.getElementById("BaseSKU").value = sku[1];
+
+    document.getElementById("atc_form").submit();
+
+}
+</script>
