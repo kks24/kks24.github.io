@@ -1,0 +1,20 @@
+<body onload="loadtimer()">
+    <h2>Getting Stock</h2>
+    <h3>Developed By LOMO#1234</h3>
+    <form action="https://www.footlocker.co.uk/INTERSHOP/web/FLE/Footlocker-Footlocker_GB-Site/en_GB/-/GBP/ViewProduct-ProductVariationSelect" method="GET" id="atc_form">
+        <input type="hidden" id="ProductSKU" name="ProductSKU">
+        <input type="hidden" id="PreselectSize" name="PreselectSize">
+        <input type="hidden" id="InventoryServerity" name="InventoryServerity" value="StandardCatalog">
+    </form>
+</body>
+
+<script type="text/javascript">
+function loadtimer() {
+    var parameters = location.search.substring(1).split("&");
+    var sku = parameters[0].split("=");
+    document.getElementById("ProductSKU").value = sku[1];
+
+    document.getElementById("atc_form").submit();
+
+}
+</script>
